@@ -206,5 +206,6 @@ public class Policy {
 
         return policyPrice;
     }
+ }
 
     
