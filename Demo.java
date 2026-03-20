@@ -39,7 +39,7 @@ public class Demo {
             System.out.println("Policyholder's First Name: " + p.getPolicyholderFirstName());
             System.out.println("Policyholder's Last Name: " + p.getPolicyholderLastName());
             System.out.println("Policyholder's Age: " + p.getPolicyholderAge());
-            System.out.println("Policyholder's Smoking Status (smoker/non-smoker): " + p.getSmokingStatus());
+            System.out.println("Policyholder's Smoking Status (smoker or non-smoker): " + p.getSmokingStatus());
             System.out.println("Policyholder's Height: " + p.getHeight() + " inches");
             System.out.println("Policyholder's Weight: " + p.getWeight() + " pounds");
             System.out.printf("Policyholder's BMI: %.2f\n", p.calculateBMI());
