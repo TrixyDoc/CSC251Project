@@ -21,7 +21,9 @@ public class Demo {
             String smokingStatus = inputFile.nextLine();
             double height = Double.parseDouble(inputFile.nextLine());
             double weight = Double.parseDouble(inputFile.nextLine());
-
+            
+            PolicyHolder holder = new PolicyHolder(firstName, lastName, age,
+                    smokingStatus, height, weight);
             Policy policy = new Policy(policyNumber, providerName, firstName,
                     lastName, age, smokingStatus, height, weight);
 
@@ -34,24 +36,16 @@ public class Demo {
         int nonSmokerCount = 0;
 
         for (Policy p : policies) {
-            System.out.println("Policy Number: " + p.getPolicyNumber());
-            System.out.println("Provider Name: " + p.getProviderName());
-            System.out.println("Policyholder's First Name: " + p.getPolicyholderFirstName());
-            System.out.println("Policyholder's Last Name: " + p.getPolicyholderLastName());
-            System.out.println("Policyholder's Age: " + p.getPolicyholderAge());
-            System.out.println("Policyholder's Smoking Status (smoker or non-smoker): " + p.getSmokingStatus());
-            System.out.println("Policyholder's Height: " + p.getHeight() + " inches");
-            System.out.println("Policyholder's Weight: " + p.getWeight() + " pounds");
-            System.out.printf("Policyholder's BMI: %.2f\n", p.calculateBMI());
-            System.out.printf("Policy Price: $%.2f\n\n", p.calculatePolicyPrice());
-
+            System.out.println(p);
+            System.out.println();
+            
             if (p.getSmokingStatus().equalsIgnoreCase("smoker")) {
                 smokerCount++;
             } else {
                 nonSmokerCount++;
             }
         }
-
+        System.out.println("There were " + Policy.getPolicyCount() + " Policy objects created.");
         System.out.println("The number of policies with a smoker is: " + smokerCount);
         System.out.println("The number of policies with a non-smoker is: " + nonSmokerCount);
     }
