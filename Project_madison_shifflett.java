@@ -1,9 +1,12 @@
 import java.util.Scanner;
+
+public class Project_madison_shifflett {
 public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Please enter the Policy Number: ");
-        String policyNumber = scanner.nextLine();
+        int policyNumber = scanner.nextInt();
+        scanner.nextLine();
 
         System.out.print("Please enter the Provider Name: ");
         String providerName = scanner.nextLine();
@@ -26,20 +29,14 @@ public static void main(String[] args) {
 
         System.out.print("Please enter the Policyholder’s Weight (in pounds): ");
         double weight = scanner.nextDouble();
-
-        Policy policy = new Policy(policyNumber, providerName, firstName, lastName,
-                                   age, smokingStatus, height, weight);
-
-        System.out.println("Policy Number: " + policy.getPolicyNumber());
-        System.out.println("Provider Name: " + policy.getProviderName());
-        System.out.println("Policyholder’s First Name: " + policy.getPolicyholderFirstName());
-        System.out.println("Policyholder’s Last Name: " + policy.getPolicyholderLastName());
-        System.out.println("Policyholder’s Age: " + policy.getPolicyholderAge());
-        System.out.println("Policyholder’s Smoking Status: " + policy.getSmokingStatus());
-        System.out.println("Policyholder’s Height: " + policy.getHeight() + " inches");
-        System.out.println("Policyholder’s Weight: " + policy.getWeight() + " pounds");
-        System.out.printf("Policyholder’s BMI: %.2f%n", policy.calculateBMI());
-        System.out.printf("Policy Price: $%.2f%n",policy.calculatePolicyPrice());
-
+        
+        PolicyHolder holder = new PolicyHolder(firstName, lastName, age, smokingStatus, height, weight);
+        Policy policy = new Policy(policyNumber, providerName, holder);
+        
+        System.out.println();
+        System.out.println(policy);
+        
         scanner.close();
     }
+    
+}
