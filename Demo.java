@@ -24,8 +24,7 @@ public class Demo {
             
             PolicyHolder holder = new PolicyHolder(firstName, lastName, age,
                     smokingStatus, height, weight);
-            Policy policy = new Policy(policyNumber, providerName, firstName,
-                    lastName, age, smokingStatus, height, weight);
+            Policy policy = new Policy(Integer.parseInt(policyNumber), providerName, holder);
 
             policies.add(policy);
         }
@@ -39,7 +38,7 @@ public class Demo {
             System.out.println(p);
             System.out.println();
             
-            if (p.getSmokingStatus().equalsIgnoreCase("smoker")) {
+            if (p.getPolicyHolder().getSmokingStatus().equalsIgnoreCase("smoker")) {
                 smokerCount++;
             } else {
                 nonSmokerCount++;
